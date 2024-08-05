@@ -1,0 +1,187 @@
+{
+  "products": {
+    "Men": [
+      {
+        "id": 1,
+        "image": "../../assets/images/img-5.jpg",
+        "category": "Shirts",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "image": "../../assets/images/img-6.jpg",
+        "category": "Printed T-Shirts",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "image": "../../assets/images/img-7.jpg",
+        "category": "Plain T-Shirt",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 4,
+
+        "image": "../../assets/images/img-8.jpg",
+        "category": "Polo T-Shirt",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 5,
+        "image": "../../assets/images/img-9.jpg",
+        "category": "Hoodies & Sweetshirt",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 6,
+        "image": "../../assets/images/img-10.jpg",
+        "category": "Jeans",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 7,
+        "image": "../../assets/images/Rectangle22.jpg",
+        "category": "Activewear",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 8,
+        "image": "../../assets/images/img-11.jpg",
+        "category": "Boxers",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      }
+    ],
+    "Women": [
+      {
+        "id": 9,
+        "image": "../../assets/images/img-12.jpg",
+        "category": "Hoodies & Sweetshirt",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 10,
+        "image": "../../assets/images/img-13.jpg",
+        "category": "Coats & Parkas",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 11,
+        "image": "../../assets/images/img-14.jpg",
+        "category": "Tees & T-Shirt",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      },
+      {
+        "id": 12,
+        "image": "../../assets/images/img-15.jpg",
+        "category": "Boxers",
+        "detail_images": [
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
+        ]
+      }
+    ],
+    "New Arrival": [
+      {
+        "id": 13,
+        "name": "Bluetooth Speaker",
+        "description": "Portable Bluetooth speaker with 10 hours of playtime.",
+        "price": 49.99,
+        "category": "Electronics",
+        "in_stock": false,
+        "image": "images/bluetooth_speaker.jpg",
+        "detail_images": [
+          "images/bluetooth_speaker_detail1.jpg",
+          "images/bluetooth_speaker_detail2.jpg",
+          "images/bluetooth_speaker_detail3.jpg"
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Electric Toothbrush",
+        "description": "Rechargeable electric toothbrush with 3 brushing modes.",
+        "price": 34.99,
+        "category": "Personal Care",
+        "in_stock": true,
+        "image": "images/electric_toothbrush.jpg",
+        "detail_images": [
+          "images/electric_toothbrush_detail1.jpg",
+          "images/electric_toothbrush_detail2.jpg",
+          "images/electric_toothbrush_detail3.jpg"
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Smartphone Stand",
+        "description": "Adjustable desk stand for smartphones and tablets.",
+        "price": 19.99,
+        "category": "Accessories",
+        "in_stock": true,
+        "image": "images/smartphone_stand.jpg",
+        "detail_images": [
+          "images/smartphone_stand_detail1.jpg",
+          "images/smartphone_stand_detail2.jpg",
+          "images/smartphone_stand_detail3.jpg"
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Portable Charger",
+        "description": "10000mAh power bank with dual USB ports.",
+        "price": 29.99,
+        "category": "Electronics",
+        "in_stock": false,
+        "image": "images/portable_charger.jpg",
+        "detail_images": [
+          "images/portable_charger_detail1.jpg",
+          "images/portable_charger_detail2.jpg",
+          "images/portable_charger_detail3.jpg"
+        ]
+      }
+    ]
+  }
+}

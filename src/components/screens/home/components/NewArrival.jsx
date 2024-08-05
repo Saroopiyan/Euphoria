@@ -73,6 +73,7 @@ const Heading = styled.h3`
   font-family: "poppinsregular";
   font-weight: 600;
   margin: 6px 0 0 0;
+  color: #3c4242;
 `;
 const ArrivalsContainer = styled.div`
   display: flex;
@@ -96,4 +97,5 @@ const Description = styled.p`
   font-family: "poppinsregular";
   font-size: 16px;
   font-weight: 700;
+  color: #3c4242;
 `;
