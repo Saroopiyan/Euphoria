@@ -125,61 +125,53 @@
         ]
       }
     ],
-    "New Arrival": [
+    "Limelight": [
       {
         "id": 13,
-        "name": "Bluetooth Speaker",
-        "description": "Portable Bluetooth speaker with 10 hours of playtime.",
-        "price": 49.99,
-        "category": "Electronics",
-        "in_stock": false,
-        "image": "images/bluetooth_speaker.jpg",
+        "image": "../../assets/images/img-16.jpg",
+        "category": "Black Sweatshirt with...",
+        "brand": "Jhanvis Brand",
+        "price": "$123.00",
         "detail_images": [
-          "images/bluetooth_speaker_detail1.jpg",
-          "images/bluetooth_speaker_detail2.jpg",
-          "images/bluetooth_speaker_detail3.jpg"
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
         ]
       },
       {
         "id": 14,
-        "name": "Electric Toothbrush",
-        "description": "Rechargeable electric toothbrush with 3 brushing modes.",
-        "price": 34.99,
-        "category": "Personal Care",
-        "in_stock": true,
-        "image": "images/electric_toothbrush.jpg",
+        "image": "../../assets/images/img-17.jpg",
+        "category": "Line Pattern Black H..",
+        "brand": "As's Brand",
+        "price": "$37.00",
         "detail_images": [
-          "images/electric_toothbrush_detail1.jpg",
-          "images/electric_toothbrush_detail2.jpg",
-          "images/electric_toothbrush_detail3.jpg"
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
         ]
       },
       {
         "id": 15,
-        "name": "Smartphone Stand",
-        "description": "Adjustable desk stand for smartphones and tablets.",
-        "price": 19.99,
-        "category": "Accessories",
-        "in_stock": true,
-        "image": "images/smartphone_stand.jpg",
+        "image": "../../assets/images/img-18.jpg",
+        "category": "Black Shorts",
+        "brand": "Mm's Brand",
+        "price": "$37.00",
         "detail_images": [
-          "images/smartphone_stand_detail1.jpg",
-          "images/smartphone_stand_detail2.jpg",
-          "images/smartphone_stand_detail3.jpg"
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
         ]
       },
       {
         "id": 16,
-        "name": "Portable Charger",
-        "description": "10000mAh power bank with dual USB ports.",
-        "price": 29.99,
-        "category": "Electronics",
-        "in_stock": false,
-        "image": "images/portable_charger.jpg",
+        "image": "../../assets/images/img-19.jpg",
+        "category": "Levender Hoodie with...",
+        "brand": "Nike's Brand",
+        "price": "$119.00",
         "detail_images": [
-          "images/portable_charger_detail1.jpg",
-          "images/portable_charger_detail2.jpg",
-          "images/portable_charger_detail3.jpg"
+          "images/running_shoes_detail1.jpg",
+          "images/running_shoes_detail2.jpg",
+          "images/running_shoes_detail3.jpg"
         ]
       }
     ]

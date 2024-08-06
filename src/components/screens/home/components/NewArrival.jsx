@@ -34,7 +34,7 @@ const NewArrival = () => {
           </Container>
           <ArrivalsContainer>
             {newArrivals.map((item) => (
-              <ContentContainer>
+              <ContentContainer key={item.id}>
                 <ImgContainer>
                   <Image src={item.img} />
                 </ImgContainer>

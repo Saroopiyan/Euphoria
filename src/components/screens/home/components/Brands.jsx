@@ -50,11 +50,12 @@ export default Brands;
 const Wrapper = styled.div`
   width: 90%;
   margin: 0 auto;
+  padding: 60px 0;
 `;
 const MainContainer = styled.div`
   background-color: #3c4242;
   border-radius: 12px;
-  padding: 43px 0;
+  padding: 34px 0;
 `;
 const Heading = styled.h3`
   font-size: 40px;
@@ -80,11 +81,12 @@ const BrandContainer = styled.div`
   width: 90%;
 `;
 const ImageContainer = styled.div`
-  width: 180px;
-  height: 85px;
+  width: 168px;
+  height: 70px;
   padding: 8px 10px;
   background-color: white;
   border-radius: 12px;
+  cursor: pointer;
 `;
 const Image = styled.img`
   display: block;

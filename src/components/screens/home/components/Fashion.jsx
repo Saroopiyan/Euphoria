@@ -90,6 +90,7 @@ const ButtonContainer = styled.div`
   display: inline-block;
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
 `;
 const Button = styled.span`
   font-size: 14px;

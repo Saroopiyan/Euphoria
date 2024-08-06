@@ -8,6 +8,9 @@ import Fashion from "./Fashion";
 import MensCategory from "./MensCategory";
 import WomensCategory from "./WomensCategory";
 import Brands from "./Brands";
+import LimeLight from "./LimeLight";
+import Feedback from "./Feedback";
+import Footer from "../../../includes/Footer";
 
 const Main = () => {
   return (
@@ -21,6 +24,9 @@ const Main = () => {
         <MensCategory />
         <WomensCategory />
         <Brands />
+        <LimeLight />
+        <Feedback />
+        <Footer />
       </MainContainer>
     </>
   );
