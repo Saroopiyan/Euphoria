@@ -4,8 +4,10 @@ import Slider from "react-slick";
 import Image1 from "../../../../assets/images/bg-1.jpg";
 import Image2 from "../../../../assets/images/bg-2.jpg";
 import Image3 from "../../../../assets/images/bg-3.jpg";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ReactComponent as FaArrowLeft } from "../../../../assets/images/left-arrow-bold.svg";
+import { ReactComponent as FaArrowRight } from "../../../../assets/images/right-arrow-bold.svg";
 
 const Spotlight = () => {
   const settings = {
@@ -15,13 +17,13 @@ const Spotlight = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
   };
 
   return (
     <SliderContainer>
       <Slider {...settings}>
-        <MainContainer bgImage={Image1}>
+        <MainContainer bgimage={Image1}>
           <ContentContainer>
             <SubHeading>T-shirt / Tops</SubHeading>
             <Heading>Summer Value Pack</Heading>
@@ -31,7 +33,7 @@ const Spotlight = () => {
             </ButtonContainer>
           </ContentContainer>
         </MainContainer>
-        <MainContainer bgImage={Image2}>
+        <MainContainer bgimage={Image2}>
           <ContentContainer>
             <SubHeading>T-shirt / Tops</SubHeading>
             <Heading>Summer Value Pack</Heading>
@@ -41,7 +43,7 @@ const Spotlight = () => {
             </ButtonContainer>
           </ContentContainer>
         </MainContainer>
-        <MainContainer bgImage={Image3}>
+        <MainContainer bgimage={Image3}>
           <ContentContainer>
             <SubHeading>T-shirt / Tops</SubHeading>
             <Heading>Summer Value Pack</Heading>
@@ -59,20 +61,32 @@ const Spotlight = () => {
 export default Spotlight;
 
 const SliderContainer = styled.div`
-  .slick-prev:before, .slick-next:before {
-    color: white; 
-    font-size: 40px;
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
   }
 `;
 
 const MainContainer = styled.div`
-  background-image: url(${props => props.bgImage});
+  background-image: url(${(props) => props.bgimage});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 716px;
   display: flex;
   align-items: center;
+  @media all and (max-width: 980px) {
+    height: 580px;
+  }
+  @media all and (max-width: 768px) {
+    height: 400px;
+  }
+  @media all and (max-width: 540px) {
+    height: 300px;
+  }
+  @media all and (max-width: 480px) {
+    height: 250px;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -81,6 +95,16 @@ const ContentContainer = styled.div`
   position: relative;
   left: 11%;
   text-align: left;
+  @media all and (max-width: 768px) {
+    padding: 52px 0;
+  }
+  @media all and (max-width: 640px) {
+    padding-left: 24px;
+  }
+  @media all and (max-width: 480px) {
+    padding: 46px 0;
+    padding-left: 33px;
+  }
 `;
 
 const SubHeading = styled.h5`
@@ -88,6 +112,25 @@ const SubHeading = styled.h5`
   font-family: "poppinsregular";
   font-size: 32px;
   margin: 18px 0px 40px 0;
+  @media all and (max-width: 1280px) {
+    font-size: 28px;
+  }
+  @media all and (max-width: 980px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 21px;
+  }
+  @media all and (max-width: 540px) {
+    margin: 0;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  @media all and (max-width: 480px) {
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
 `;
 
 const Heading = styled.h1`
@@ -96,6 +139,28 @@ const Heading = styled.h1`
   font-size: 78px;
   line-height: 6rem;
   margin: 18px 0px 40px 0;
+  @media all and (max-width: 1280px) {
+    font-size: 60px;
+    line-height: 4rem;
+  }
+  @media all and (max-width: 980px) {
+    font-size: 52px;
+    line-height: 3rem;
+    margin-bottom: 20px;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 34px;
+    line-height: 2rem;
+  }
+  @media all and (max-width: 540px) {
+    margin: 0;
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+  @media all and (max-width: 480px) {
+    font-size: 20px;
+    line-height: 23px;
+  }
 `;
 
 const SubHeadings = styled.h5`
@@ -103,6 +168,27 @@ const SubHeadings = styled.h5`
   font-family: "poppinsregular";
   font-size: 32px;
   margin: 18px 0px 40px 0;
+  @media all and (max-width: 1280px) {
+    font-size: 28px;
+  }
+  @media all and (max-width: 980px) {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 21px;
+  }
+  @media all and (max-width: 540px) {
+    margin-bottom: 20px;
+  }
+  @media all and (max-width: 540px) {
+    margin: 0;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  @media all and (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -111,6 +197,15 @@ const ButtonContainer = styled.div`
   display: inline-block;
   border-radius: 8px;
   cursor: pointer;
+  @media all and (max-width: 980px) {
+    padding: 14px 35px;
+  }
+  @media all and (max-width: 768px) {
+    padding: 5px 22px;
+  }
+  @media all and (max-width: 480px) {
+    padding: 4px 15px;
+  }
 `;
 
 const Button = styled.span`
@@ -118,6 +213,12 @@ const Button = styled.span`
   font-family: "poppinsmedium";
   color: #3c4242;
   font-weight: 600;
+  @media all and (max-width: 980px) {
+    font-size: 18px;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const Arrow = styled.div`
@@ -130,6 +231,10 @@ const Arrow = styled.div`
   color: #fff;
   cursor: pointer;
   z-index: 1;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+  }
 
   &.slick-prev {
     left: 25px;
@@ -138,13 +243,18 @@ const Arrow = styled.div`
   &.slick-next {
     right: 25px;
   }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 const PrevArrow = (props) => {
   const { className, onClick } = props;
   return (
-    <Arrow className={className}  onClick={onClick}>
-      ◀
+    <Arrow className={className} onClick={onClick}>
+      <FaArrowLeft />
     </Arrow>
   );
 };
@@ -152,8 +262,8 @@ const PrevArrow = (props) => {
 const NextArrow = (props) => {
   const { className, onClick } = props;
   return (
-    <Arrow className={className}  onClick={onClick}>
-      ▶
+    <Arrow className={className} onClick={onClick}>
+      <FaArrowRight />
     </Arrow>
   );
 };

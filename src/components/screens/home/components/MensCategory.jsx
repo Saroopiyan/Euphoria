@@ -65,6 +65,16 @@ const Heading = styled.h3`
   font-weight: 600;
   color: #3c4242;
   margin-top: 38px;
+  @media all and (max-width: 980px) {
+    font-size: 26px;
+  }
+  @media all and (max-width: 540px) {
+    margin-top: 30px;
+  }
+  @media all and (max-width: 480px) {
+    font-size: 20px;
+    margin-top: 24px;
+  }
 `;
 const ProductsContainer = styled.div`
   display: flex;
@@ -72,9 +82,21 @@ const ProductsContainer = styled.div`
   justify-content: space-between;
   gap: 40px;
   padding: 30px 0;
+  @media all and (max-width: 1280px) {
+    gap: 20px;
+  }
+  @media all and (max-width: 768px) {
+    padding: 0;
+  }
 `;
 const Products = styled.div`
   cursor: pointer;
+  @media all and (max-width: 1280px) {
+    width: 22%;
+  }
+  @media all and (max-width: 640px) {
+    width: 29%;
+  }
 `;
 const ImageContainer = styled.div`
   margin-bottom: 10px;
@@ -92,6 +114,9 @@ const Contents = styled.div`
 const Right = styled.div``;
 const ArrowContainer = styled.div`
   width: 15px;
+  @media all and (max-width: 768px) {
+    width: 10px;
+  }
 `;
 const Arrow = styled.img`
   display: block;
@@ -105,10 +130,17 @@ const Category = styled.p`
   color: #2a2f2f;
   margin: 0;
   margin-bottom: 3px;
+  @media all and (max-width: 768px) {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
 `;
 const Text = styled.p`
   font-family: "poppinsregular";
   font-size: 12px;
   color: #7f7f7f;
   margin: 0;
+  @media all and (max-width: 768px) {
+    font-size: 10px;
+  }
 `;

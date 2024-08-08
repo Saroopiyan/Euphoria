@@ -69,24 +69,28 @@ const Footer = () => {
             <RightContainer>
               <DownloadText>Download The App</DownloadText>
               <ImageContent>
-                <ImageContainer>
-                  <Image
-                    src={require("../../assets/images/playstore.svg").default}
-                  />
-                </ImageContainer>
-                <GooglePlay>
-                  <Span>android app on</Span>
-                  <Sub>Google Play</Sub>
-                </GooglePlay>
-                <ImageContainer>
-                  <Image
-                    src={require("../../assets/images/phone.svg").default}
-                  />
-                </ImageContainer>
-                <GooglePlay>
-                  <Span>android app on</Span>
-                  <Sub>Google Play</Sub>
-                </GooglePlay>
+                <Left>
+                  <ImageContainer>
+                    <Image
+                      src={require("../../assets/images/playstore.svg").default}
+                    />
+                  </ImageContainer>
+                  <GooglePlay>
+                    <Span>android app on</Span>
+                    <Sub>Google Play</Sub>
+                  </GooglePlay>
+                </Left>
+                <Right>
+                  <ImageContainer>
+                    <Image
+                      src={require("../../assets/images/phone.svg").default}
+                    />
+                  </ImageContainer>
+                  <GooglePlay>
+                    <Span>android app on</Span>
+                    <Sub>Google Play</Sub>
+                  </GooglePlay>
+                </Right>
               </ImageContent>
             </RightContainer>
           </ComonContainer>
@@ -118,38 +122,75 @@ const Wrapper = styled.div`
 `;
 const MainContainer = styled.div`
   padding: 50px 50px;
+  box-sizing: border-box;
   width: 78%;
   margin: 0 auto;
+  @media all and (max-width: 1280px) {
+    width: 90%;
+  }
+  @media all and (max-width: 640px) {
+    padding: 0;
+  }
 `;
 const TopContainer = styled.ul`
   display: flex;
   justify-content: space-between;
   list-style: none;
+  @media all and (max-width: 980px) {
+    flex-wrap: wrap;
+  }
 `;
 const Contents = styled.li`
   text-align: left;
+  @media all and (max-width: 980px) {
+    width: 27%;
+  }
 `;
 const Title = styled.h3`
   color: #f6f6f6;
   font-size: 26px;
   font-family: "poppinsmedium";
+  @media all and (max-width: 640px) {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
 `;
 const Subs = styled.p`
   color: #f6f6f6;
   font-family: "poppinsregular";
   font-size: 13px;
   cursor: pointer;
+  @media all and (max-width: 640px) {
+    font-size: 10px;
+    line-height: 10px;
+  }
 `;
 const ComonContainer = styled.div`
   display: flex;
+  @media all and (max-width: 480px) {
+    flex-wrap: wrap;
+  }
 `;
 const LeftContainer = styled.div`
-  width: 72%;
+  width: 66%;
   margin-top: 96px;
+  @media all and (max-width: 480px) {
+    margin-top: 0;
+  }
 `;
 const RightContainer = styled.div`
   text-align: left;
-  width: 30%;
+  width: 34%;
+  @media all and (max-width: 1080px) {
+    width: 40%;
+  }
+  @media all and (max-width: 640px) {
+    margin-bottom: 20px;
+  }
+  @media all and (max-width: 480px) {
+    width: 76%;
+    margin: 0 auto;
+  }
 `;
 const IconMain = styled.div`
   display: flex;
@@ -163,6 +204,10 @@ const IconContainer = styled.div`
   width: 20px;
   height: 20px;
   cursor: pointer;
+  @media all and (max-width: 640px) {
+    width: 14px;
+    height: 14px;
+  }
 `;
 const Icon = styled.img`
   display: block;
@@ -174,6 +219,20 @@ const DownloadText = styled.h3`
   color: #f6f6f6;
   font-family: "poppinsbold";
   font-weight: 700;
+  @media all and (max-width: 980px) {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+  @media all and (max-width: 640px) {
+    font-size: 18px;
+  }
+  @media all and (max-width: 640px) {
+    margin-top: 52px;
+  }
+  @media all and (max-width: 480px) {
+    margin-top: 12px;
+    font-size: 16px;
+  }
 `;
 const ImageContent = styled.div`
   display: flex;
@@ -181,10 +240,33 @@ const ImageContent = styled.div`
   justify-content: center;
   cursor: pointer;
 `;
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+`;
+const Right = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  @media all and (max-width: 480px) {
+    margin-bottom: 10px;
+  }
+`;
+
 const ImageContainer = styled.div`
   margin-right: 10px;
+  @media all and (max-width: 980px) {
+    width: 25px;
+  }
+  @media all and (max-width: 480px) {
+    width: 15px;
+  }
 `;
-const Image = styled.img``;
+const Image = styled.img`
+  display: block;
+  width: 100%;
+`;
 const GooglePlay = styled.div`
   margin-right: 20px;
 `;
@@ -192,6 +274,9 @@ const Span = styled.span`
   font-family: "poppinsregular";
   color: #ffffff;
   font-size: 9px;
+  @media all and (max-width: 980px) {
+    display: none;
+  }
 `;
 const Sub = styled.p`
   margin: 0;
@@ -199,6 +284,9 @@ const Sub = styled.p`
   color: #ffffff;
   font-size: 16px;
   font-weight: 400;
+  @media all and (max-width: 980px) {
+    font-size: 11px;
+  }
 `;
 const CategoryDiv = styled.div`
   width: 90%;
@@ -213,6 +301,13 @@ const CategoryText = styled.h3`
   margin-left: 85px;
   font-family: "poppinsmedium";
   font-weight: 700;
+  @media all and (max-width: 980px) {
+    margin-left: 0;
+    font-size: 20px;
+  }
+  @media all and (max-width: 640px) {
+    font-size: 17px;
+  }
 `;
 const Div = styled.div`
   display: flex;
@@ -223,6 +318,9 @@ const Div = styled.div`
 
 const DropdownContainer = styled.div`
   cursor: pointer;
+  @media all and (max-width: 640px) {
+    width: 16px;
+  }
 `;
 const DropdownImg = styled.img`
   display: block;
@@ -230,10 +328,19 @@ const DropdownImg = styled.img`
 `;
 const Copyright = styled.div`
   padding: 40px 0;
+  @media all and (max-width: 640px) {
+    padding: 8px 0;
+  }
 `;
 const CopyText = styled.span`
   color: #ffffff;
   font-size: 14px;
   font-family: "poppinsmedium";
   font-weight: 700;
+  @media all and (max-width: 980px) {
+    font-size: 12px;
+  }
+  @media all and (max-width: 640px) {
+    font-size: 8px;
+  }
 `;

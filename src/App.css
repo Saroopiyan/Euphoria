@@ -55,9 +55,9 @@
     url("./assets/fonts/poppins-regular-webfont.woff2") format("woff");
 }
 
-.slick-dots {
+/* .slick-dots {
   bottom: 10px !important;
-}
+} */
 .slick-dots li.slick-active button:before {
   color: white !important;
   font-size: 10px !important;

@@ -96,6 +96,16 @@ const Heading = styled.h3`
   font-weight: 600;
   color: #3c4242;
   margin-top: 38px;
+  @media all and (max-width: 980px) {
+    font-size: 26px;
+  }
+  @media all and (max-width: 540px) {
+    margin-top: 30px;
+  }
+  @media all and (max-width: 480px) {
+    font-size: 20px;
+    margin-top: 24px;
+  }
 `;
 
 const ContentMainContainer = styled.div`
@@ -103,6 +113,12 @@ const ContentMainContainer = styled.div`
   justify-content: space-between;
   gap: 20px;
   padding: 30px 0;
+  @media all and (max-width: 980px) {
+    flex-wrap: wrap;
+  }
+  @media all and (max-width: 768px) {
+    padding-top: 0;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -110,15 +126,32 @@ const ContentContainer = styled.div`
   width: 27%;
   border-radius: 10px;
   padding: 23px 23px;
+  @media all and (max-width: 980px) {
+    width: 41%;
+  }
+  @media all and (max-width: 768px) {
+    width: 40%;
+  }
+  @media all and (max-width: 640px) {
+    width: 100%;
+    padding: 12px 15px;
+  }
 `;
 
 const HeadContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  @media all and (max-width: 640px) {
+    margin-bottom: 10px;
+  }
 `;
 
-const ProfileContainer = styled.div``;
+const ProfileContainer = styled.div`
+  @media all and (max-width: 640px) {
+    width: 35px;
+  }
+`;
 
 const ProfileImage = styled.img`
   width: 100%;
@@ -140,11 +173,14 @@ const Name = styled.div`
   color: #3c4242;
 `;
 
-const Review = styled.div`
+const Review = styled.p`
   text-align: left;
   font-size: 12px;
   color: #807d7e;
   width: 92%;
+  @media all and (max-width: 640px) {
+    font-size: 10px;
+  }
   & > p {
     margin: 0;
   }

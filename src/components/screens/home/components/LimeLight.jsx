@@ -68,6 +68,16 @@ const Heading = styled.h3`
   font-weight: 600;
   color: #3c4242;
   margin-top: 38px;
+  @media all and (max-width: 980px) {
+    font-size: 26px;
+  }
+  @media all and (max-width: 540px) {
+    margin-top: 30px;
+  }
+  @media all and (max-width: 480px) {
+    font-size: 20px;
+    margin-top: 24px;
+  }
 `;
 const ProductsContainer = styled.div`
   display: flex;
@@ -75,10 +85,25 @@ const ProductsContainer = styled.div`
   justify-content: space-between;
   gap: 40px;
   padding: 30px 0;
+  @media all and (max-width: 1280px) {
+    gap: 36px;
+  }
+  @media all and (max-width: 980px) {
+    gap: 26px;
+  }
+  @media all and (max-width: 768px) {
+    padding: 5px 0;
+  }
 `;
 const Products = styled.div`
   cursor: pointer;
   position: relative;
+  @media all and (max-width: 1280px) {
+    width: 22%;
+  }
+  @media all and (max-width: 640px) {
+    width: 44%;
+  }
 `;
 const WishlistContainer = styled.div`
   position: absolute;
@@ -88,6 +113,13 @@ const WishlistContainer = styled.div`
   padding: 8px 8px;
   top: 26px;
   right: 23px;
+  @media all and (max-width: 540px) {
+    width: 14px;
+    padding: 6px 6px;
+  }
+  @media all and (max-width: 540px) {
+    right: 14px;
+  }
 `;
 const WishlistImg = styled.img`
   display: block;
@@ -111,6 +143,9 @@ const ArrowContainer = styled.div``;
 const Brands = styled.p`
   font-family: "poppinsmedium";
   font-size: 14px;
+  @media all and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const Category = styled.p`
@@ -120,10 +155,18 @@ const Category = styled.p`
   color: #2a2f2f;
   margin: 0;
   margin-bottom: 3px;
+  @media all and (max-width: 980px) {
+    font-size: 10px;
+    margin-bottom: 0;
+    line-height: 15px;
+  }
 `;
 const Text = styled.p`
   font-family: "poppinsregular";
   font-size: 12px;
   color: #7f7f7f;
   margin: 0;
+  @media all and (max-width: 980px) {
+    font-size: 10px;
+  }
 `;
