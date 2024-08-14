@@ -278,10 +278,11 @@ const LinkItem = styled.div`
 `;
 const Status = styled.div``;
 const Item = styled.h3`
-  font-size: 18px;
+  font-size: 16px;
   font-family: "poppinsregular";
   margin-bottom: 28px;
   border-bottom: 1px solid #e5e7eb;
+  text-align: left;
   &:hover {
     font-weight: 700;
   }

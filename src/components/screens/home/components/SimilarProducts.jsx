@@ -1,36 +1,39 @@
 import React from "react";
 import styled from "styled-components";
 import products from "../../../helpers/Products.json";
-import { Link } from "react-router-dom";
 
-const MensCategory = () => {
-  const menProducts = products.products?.Men;
+const SimilarProducts = () => {
+  const similarproducts = products.products?.Similar_products;
+
   return (
     <>
       <Wrapper>
         <MainContainer>
           <Container>
             <Bullet></Bullet>
-            <Heading>Categories For Men</Heading>
+            <Heading>Similar Products</Heading>
           </Container>
           <ProductsContainer>
-            {menProducts.map((item) => (
-              <Products key={item.id} to={`/singlepage/${item.id}`}>
+            {similarproducts.map((item) => (
+              <Products key={item.id}>
+                <WishlistContainer>
+                  <WishlistImg
+                    src={
+                      require("../../../../../src/assets/images/wishlist.svg")
+                        .default
+                    }
+                  />
+                </WishlistContainer>
                 <ImageContainer>
                   <Image src={item.image} />
                 </ImageContainer>
                 <Contents>
                   <Right>
                     <Category>{item.category}</Category>
-                    <Text>Explore Now!</Text>
+                    <Text>{item.brand}</Text>
                   </Right>
                   <ArrowContainer>
-                    <Arrow
-                      src={
-                        require("../../../../assets/images/arrow-right.svg")
-                          .default
-                      }
-                    />
+                    <Brands>{item.price}</Brands>
                   </ArrowContainer>
                 </Contents>
               </Products>
@@ -42,7 +45,7 @@ const MensCategory = () => {
   );
 };
 
-export default MensCategory;
+export default SimilarProducts;
 
 const Wrapper = styled.div`
   width: 90%;
@@ -84,23 +87,44 @@ const ProductsContainer = styled.div`
   gap: 40px;
   padding: 30px 0;
   @media all and (max-width: 1280px) {
-    gap: 20px;
+    gap: 36px;
+  }
+  @media all and (max-width: 980px) {
+    gap: 26px;
   }
   @media all and (max-width: 768px) {
-    padding: 0;
+    padding: 5px 0;
   }
 `;
-const Products = styled(Link)`
+const Products = styled.div`
   cursor: pointer;
+  position: relative;
   @media all and (max-width: 1280px) {
     width: 22%;
   }
   @media all and (max-width: 640px) {
-    width: 29%;
+    width: 44%;
   }
-  @media all and (max-width: 480px) {
-    width: 45%;
+`;
+const WishlistContainer = styled.div`
+  position: absolute;
+  width: 18px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 8px 8px;
+  top: 26px;
+  right: 23px;
+  @media all and (max-width: 540px) {
+    width: 14px;
+    padding: 6px 6px;
   }
+  @media all and (max-width: 540px) {
+    right: 14px;
+  }
+`;
+const WishlistImg = styled.img`
+  display: block;
+  width: 100%;
 `;
 const ImageContainer = styled.div`
   margin-bottom: 10px;
@@ -116,15 +140,14 @@ const Contents = styled.div`
   justify-content: space-between;
 `;
 const Right = styled.div``;
-const ArrowContainer = styled.div`
-  width: 15px;
+const ArrowContainer = styled.div``;
+const Brands = styled.p`
+  font-family: "poppinsmedium";
+  font-size: 14px;
+  color: #3c4242;
   @media all and (max-width: 768px) {
-    width: 10px;
+    font-size: 12px;
   }
-`;
-const Arrow = styled.img`
-  display: block;
-  width: 100%;
 `;
 
 const Category = styled.p`
@@ -134,9 +157,10 @@ const Category = styled.p`
   color: #2a2f2f;
   margin: 0;
   margin-bottom: 3px;
-  @media all and (max-width: 768px) {
-    font-size: 12px;
+  @media all and (max-width: 980px) {
+    font-size: 10px;
     margin-bottom: 0;
+    line-height: 15px;
   }
 `;
 const Text = styled.p`
@@ -144,7 +168,7 @@ const Text = styled.p`
   font-size: 12px;
   color: #7f7f7f;
   margin: 0;
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 980px) {
     font-size: 10px;
   }
 `;

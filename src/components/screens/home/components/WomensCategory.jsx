@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import products from "../../../helpers/Products.json";
+import { Link } from "react-router-dom";
 
 const WomensCategory = () => {
   const womenProducts = products.products?.Women;
@@ -14,7 +15,7 @@ const WomensCategory = () => {
           </Container>
           <ProductsContainer>
             {womenProducts.map((item) => (
-              <Products key={item.id}>
+              <Products key={item.id} to={`/singlepage/${item.id}`}>
                 <ImageContainer>
                   <Image src={item.image} />
                 </ImageContainer>
@@ -89,7 +90,7 @@ const ProductsContainer = styled.div`
     padding: 0;
   }
 `;
-const Products = styled.div`
+const Products = styled(Link)`
   cursor: pointer;
   @media all and (max-width: 1280px) {
     width: 22%;

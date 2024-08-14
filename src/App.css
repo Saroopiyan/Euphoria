@@ -62,3 +62,6 @@
   color: white !important;
   font-size: 10px !important;
 }
+a {
+  text-decoration: none;
+}

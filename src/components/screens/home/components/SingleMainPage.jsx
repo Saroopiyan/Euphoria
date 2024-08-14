@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Header from "../../../includes/Header";
 import Footer from "../../../includes/Footer";
 import SinglePage from "./SinglePage";
+import ProductDescription from "./ProductDescription";
+import SimilarProducts from "./SimilarProducts";
 
 const SingleMainPage = () => {
   return (
@@ -10,6 +12,8 @@ const SingleMainPage = () => {
       <MainContainer>
         <Header />
         <SinglePage />
+        <ProductDescription />
+        <SimilarProducts />
         <Footer />
       </MainContainer>
     </>

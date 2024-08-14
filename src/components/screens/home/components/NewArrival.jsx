@@ -3,32 +3,13 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import products from "../../../../components/helpers/Products.json";
+import { Link } from "react-router-dom";
 import { ReactComponent as FaArrowLeft } from "../../../../assets/images/arrow-left.svg";
 import { ReactComponent as FaArrowRight } from "../../../../assets/images/arrow-right.svg";
 
 const NewArrival = () => {
-  const newArrivals = [
-    {
-      id: 1,
-      img: require("../../../../assets/images/img-1.jpg"),
-      description: "Knitted Joggers",
-    },
-    {
-      id: 2,
-      img: require("../../../../assets/images/img-3.jpg"),
-      description: "Full Sleeve",
-    },
-    {
-      id: 3,
-      img: require("../../../../assets/images/img-4.jpg"),
-      description: "Active T-Shirts",
-    },
-    {
-      id: 4,
-      img: require("../../../../assets/images/img-2.jpg"),
-      description: "Urban Shirts",
-    },
-  ];
+  const newArrivals = products.products?.Newarrival;
 
   const settings = {
     dots: true,
@@ -66,11 +47,11 @@ const NewArrival = () => {
         <MainDiv>
           <SliderContainer {...settings}>
             {newArrivals.map((item) => (
-              <ContentContainer key={item.id}>
+              <ContentContainer key={item.id} to={`/singlepage/${item.id}`}>
                 <ImgContainer>
-                  <Image src={item.img} />
+                  <Image src={item.image} />
                 </ImgContainer>
-                <Description>{item.description}</Description>
+                <Description>{item.category}</Description>
               </ContentContainer>
             ))}
           </SliderContainer>
@@ -129,7 +110,7 @@ const SliderContainer = styled(Slider)`
   }
 `;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled(Link)`
   padding: 0 10px;
 `;
 

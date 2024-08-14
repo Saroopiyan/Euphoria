@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import products from "../../../helpers/Products.json";
+import { Link } from "react-router-dom";
 
 const LimeLight = () => {
   const limelight = products.products?.Limelight;
@@ -14,7 +15,7 @@ const LimeLight = () => {
           </Container>
           <ProductsContainer>
             {limelight.map((item) => (
-              <Products key={item.id}>
+              <Products key={item.id} to={`/singlepage/${item.id}`}>
                 <WishlistContainer>
                   <WishlistImg
                     src={
@@ -95,7 +96,7 @@ const ProductsContainer = styled.div`
     padding: 5px 0;
   }
 `;
-const Products = styled.div`
+const Products = styled(Link)`
   cursor: pointer;
   position: relative;
   @media all and (max-width: 1280px) {
@@ -143,6 +144,7 @@ const ArrowContainer = styled.div``;
 const Brands = styled.p`
   font-family: "poppinsmedium";
   font-size: 14px;
+  color: #3c4242;
   @media all and (max-width: 768px) {
     font-size: 12px;
   }

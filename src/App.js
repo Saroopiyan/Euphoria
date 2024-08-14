@@ -9,10 +9,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/singlepage" element={<SingleMainPage />} />
+          <Route path="/singlepage/:id" element={<SingleMainPage />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
+
 export default App;
