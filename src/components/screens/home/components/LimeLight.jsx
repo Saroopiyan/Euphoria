@@ -86,6 +86,7 @@ const ProductsContainer = styled.div`
   justify-content: space-between;
   gap: 40px;
   padding: 30px 0;
+  margin-top: 30px;
   @media all and (max-width: 1280px) {
     gap: 36px;
   }
@@ -121,6 +122,10 @@ const WishlistContainer = styled.div`
   @media all and (max-width: 540px) {
     right: 14px;
   }
+  @media all and (max-width: 768px) {
+    right: 5px;
+    top: 14px;
+  }
 `;
 const WishlistImg = styled.img`
   display: block;
@@ -140,7 +145,9 @@ const Contents = styled.div`
   justify-content: space-between;
 `;
 const Right = styled.div``;
-const ArrowContainer = styled.div``;
+const ArrowContainer = styled.div`
+  background: #f6f6f6;
+`;
 const Brands = styled.p`
   font-family: "poppinsmedium";
   font-size: 14px;
@@ -156,7 +163,8 @@ const Category = styled.p`
   font-weight: 700;
   color: #2a2f2f;
   margin: 0;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
+  margin-top: 14px;
   @media all and (max-width: 980px) {
     font-size: 10px;
     margin-bottom: 0;

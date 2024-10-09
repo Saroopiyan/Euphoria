@@ -51,7 +51,8 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 50px 0px;
-  margin-top: 50px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   @media all and (max-width: 768px) {
     margin-top: 0;
     padding: 28px 0;
@@ -120,13 +121,13 @@ const Text = styled.h5`
 
 const Heading = styled.h3`
   font-family: "poppinsbold";
-  font-size: 40px;
+  font-size: 34px;
   color: #ffffff;
-  width: 70%;
+  width: 56%;
   margin: 15px 0 15px 0;
   line-height: 45.1px;
   @media all and (max-width: 1280px) {
-    font-size: 34px;
+    font-size: 30px;
   }
   @media all and (max-width: 980px) {
     font-size: 26px;
@@ -159,7 +160,7 @@ const Explore = styled.h5`
   font-family: "poppinsregular";
   color: #ffffff;
   font-size: 18px;
-  margin: 20px 0 0 0;
+  margin: 30px 0 0 0;
   text-underline-offset: 5px;
   cursor: pointer;
   @media all and (max-width: 1280px) {

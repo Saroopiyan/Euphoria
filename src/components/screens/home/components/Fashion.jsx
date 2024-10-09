@@ -121,6 +121,7 @@ const Heading = styled.h3`
   font-weight: 800;
   line-height: 50px;
   margin: 70px 0 27px 0;
+  width: 100%;
   @media all and (max-width: 1280px) {
     margin-top: 0;
   }

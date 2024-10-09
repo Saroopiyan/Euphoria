@@ -113,6 +113,7 @@ const ContentMainContainer = styled.div`
   justify-content: space-between;
   gap: 20px;
   padding: 30px 0;
+  margin-bottom: 70px;
   @media all and (max-width: 980px) {
     flex-wrap: wrap;
   }
@@ -175,11 +176,11 @@ const Name = styled.div`
 
 const Review = styled.p`
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   color: #807d7e;
   width: 92%;
   @media all and (max-width: 640px) {
-    font-size: 10px;
+    font-size: 11px;
   }
   & > p {
     margin: 0;

@@ -37,8 +37,8 @@ const SinglePage = () => {
 
     setZoomStyle({
       display: "block",
-      top: y - 75 + "px", // Adjust based on the zoom window size
-      left: x - 75 + "px", // Adjust based on the zoom window size
+      top: y - 75 + "px", 
+      left: x - 75 + "px", 
       backgroundPosition: `${xPercent}% ${yPercent}%`,
     });
   };

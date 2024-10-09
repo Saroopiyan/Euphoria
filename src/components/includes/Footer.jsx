@@ -121,7 +121,7 @@ const Wrapper = styled.div`
   background-color: #3c4242;
 `;
 const MainContainer = styled.div`
-  padding: 50px 50px;
+  padding: 50px 0px;
   box-sizing: border-box;
   width: 78%;
   margin: 0 auto;
@@ -139,11 +139,17 @@ const TopContainer = styled.ul`
   @media all and (max-width: 980px) {
     flex-wrap: wrap;
   }
+  @media all and (max-width: 360px) {
+    padding-left: 33px;
+  }
 `;
 const Contents = styled.li`
   text-align: left;
   @media all and (max-width: 980px) {
     width: 27%;
+  }
+  @media all and (max-width: 360px) {
+    width: 100%;
   }
 `;
 const Title = styled.h3`
@@ -334,7 +340,7 @@ const Copyright = styled.div`
 `;
 const CopyText = styled.span`
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "poppinsmedium";
   font-weight: 700;
   @media all and (max-width: 980px) {

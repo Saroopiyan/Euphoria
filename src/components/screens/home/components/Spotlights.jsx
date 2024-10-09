@@ -139,27 +139,33 @@ const Heading = styled.h1`
   font-size: 78px;
   line-height: 6rem;
   margin: 18px 0px 40px 0;
+  width: 500px;
   @media all and (max-width: 1280px) {
     font-size: 60px;
     line-height: 4rem;
+    width: 439px;
   }
   @media all and (max-width: 980px) {
     font-size: 52px;
     line-height: 3rem;
     margin-bottom: 20px;
+    width: 360px;
   }
   @media all and (max-width: 768px) {
     font-size: 34px;
-    line-height: 2rem;
+    line-height: 2.5rem;
+    width: 250px;
   }
   @media all and (max-width: 540px) {
     margin: 0;
     font-size: 27px;
     margin-bottom: 10px;
+    width: 200px;
   }
   @media all and (max-width: 480px) {
     font-size: 20px;
     line-height: 23px;
+    width: 120px;
   }
 `;
 
@@ -247,6 +253,14 @@ const Arrow = styled.div`
   svg {
     width: 30px;
     height: 30px;
+  }
+  @media all and (max-width: 360px) {
+    &.slick-prev {
+    left: 6px;
+  }
+  &.slick-next {
+    right: 6px;
+  }
   }
 `;
 

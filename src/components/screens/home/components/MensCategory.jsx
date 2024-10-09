@@ -1,10 +1,34 @@
 import React from "react";
 import styled from "styled-components";
-import products from "../../../helpers/Products.json";
+// import products from "../../../helpers/Products.json";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const MensCategory = () => {
-  const menProducts = products.products?.Men;
+  const [menProducts, setMenProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const data = await response.json();
+        const filteredMenProducts = data.filter(
+          (item) => item.category === "men's clothing"
+        );
+        setMenProducts(filteredMenProducts);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  const truncateTitle = (title, maxLength) => {
+    return title.length > maxLength
+      ? `${title.substring(0, maxLength)}...`
+      : title;
+  };
+
   return (
     <>
       <Wrapper>
@@ -21,7 +45,7 @@ const MensCategory = () => {
                 </ImageContainer>
                 <Contents>
                   <Right>
-                    <Category>{item.category}</Category>
+                    <Category>{truncateTitle(item.title, 15)}</Category>
                     <Text>Explore Now!</Text>
                   </Right>
                   <ArrowContainer>
@@ -65,7 +89,8 @@ const Heading = styled.h3`
   font-family: "poppinsregular";
   font-weight: 600;
   color: #3c4242;
-  margin-top: 38px;
+  margin-top: 50px;
+  margin-bottom: 40px;
   @media all and (max-width: 980px) {
     font-size: 26px;
   }
@@ -83,8 +108,9 @@ const ProductsContainer = styled.div`
   justify-content: space-between;
   gap: 40px;
   padding: 30px 0;
+  margin-bottom: 32px;
   @media all and (max-width: 1280px) {
-    gap: 20px;
+    /* gap: 20px; */
   }
   @media all and (max-width: 768px) {
     padding: 0;
@@ -93,21 +119,30 @@ const ProductsContainer = styled.div`
 const Products = styled(Link)`
   cursor: pointer;
   @media all and (max-width: 1280px) {
-    width: 22%;
+    width: 26%;
   }
-  @media all and (max-width: 640px) {
+  @media all and (max-width: 980px) {
+    width: 30%;
+  }
+  @media all and (max-width: 888px) {
     width: 29%;
   }
-  @media all and (max-width: 480px) {
-    width: 45%;
+  @media all and (max-width: 683px) {
+    width: 43%;
+  }
+  @media all and (max-width: 444px) {
+    width: 100%;
   }
 `;
 const ImageContainer = styled.div`
   margin-bottom: 10px;
+  /* width: 250px; */
+  height: 300px;
 `;
 const Image = styled.img`
   display: block;
   width: 100%;
+  height: 100%;
 `;
 const Contents = styled.div`
   text-align: left;
@@ -133,7 +168,8 @@ const Category = styled.p`
   font-weight: 700;
   color: #2a2f2f;
   margin: 0;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
+  margin-top: 14px;
   @media all and (max-width: 768px) {
     font-size: 12px;
     margin-bottom: 0;

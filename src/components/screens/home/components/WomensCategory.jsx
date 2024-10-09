@@ -83,6 +83,7 @@ const ProductsContainer = styled.div`
   justify-content: space-between;
   gap: 40px;
   padding: 30px 0;
+  margin-top: 20px;
   @media all and (max-width: 1280px) {
     gap: 20px;
   }
@@ -130,7 +131,8 @@ const Category = styled.p`
   font-weight: 700;
   color: #2a2f2f;
   margin: 0;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
+  margin-top: 14px;
   @media all and (max-width: 768px) {
     font-size: 10px;
     margin-bottom: 0;

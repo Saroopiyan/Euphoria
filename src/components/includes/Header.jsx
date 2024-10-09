@@ -5,18 +5,66 @@ import menubar from "../../assets/images/menu-bar.svg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [Modal, setModal] = useState(false);
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const toggleModal = () => {
+    if (token) {
+      handleLogout();
+    } else {
+      setModal(!Modal);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
+
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen || Modal) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [isOpen]);
+  }, [isOpen, Modal]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("https://fakestoreapi.com/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Login successful:", data);
+        setModal(false);
+        localStorage.setItem("token", data.token);
+      } else {
+        console.error("Login failed:", data.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const token = localStorage.getItem("token");
+
+  console.log(formData, "formData");
 
   return (
     <>
@@ -52,9 +100,15 @@ const Header = () => {
                   src={require("../../assets/images/wishlist.svg").default}
                 />
               </ImageContainer>
-              <ImageContainer>
+
+              <ImageContainer onClick={toggleModal}>
                 <Account
-                  src={require("../../assets/images/account.svg").default}
+                  src={
+                    token
+                      ? require("../../assets/images/logout-svgrepo-com.svg")
+                          .default
+                      : require("../../assets/images/account.svg").default
+                  }
                 />
               </ImageContainer>
               <ImageContainer>
@@ -87,6 +141,45 @@ const Header = () => {
           </MenuBar>
         </Headers>
       </Wrapper>
+      {Modal && (
+        <ModalOverlay>
+          <ModalContent>
+            <LoginHeading>Login</LoginHeading>
+            <LoginForm>
+              <EmailDiv>
+                <EmailLabel>Username:</EmailLabel>
+                <EmailInput
+                  type="text"
+                  placeholder="Enter your username"
+                  required
+                  value={formData.username}
+                  onChange={(e) =>
+                    setFormData({ ...formData, username: e.target.value })
+                  }
+                />
+              </EmailDiv>
+              <PasswDiv>
+                <PassLabel>Password:</PassLabel>
+                <PassInput
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
+                />
+              </PasswDiv>
+              <SubmitButton type="submit" onClick={(e) => handleSubmit(e)}>
+                Submit
+              </SubmitButton>
+              <CloseButton type="button" onClick={toggleModal}>
+                Close
+              </CloseButton>
+            </LoginForm>
+          </ModalContent>
+        </ModalOverlay>
+      )}
     </>
   );
 };
@@ -160,6 +253,7 @@ const RightDiv = styled.div`
 `;
 const Form = styled.div`
   display: flex;
+  background: #f6f6f6;
 `;
 const SearchContainer = styled.div`
   display: flex;
@@ -223,6 +317,7 @@ const RightContainer = styled.div`
 const ImageContainer = styled.div`
   cursor: pointer;
   width: 18px;
+  background: #f6f6f6;
   @media all and (max-width: 1280px) {
     width: 16px;
   }
@@ -293,4 +388,83 @@ const CloseBar = styled.div`
 const Close = styled.img`
   width: 100%;
   display: block;
+`;
+
+const LoginHeading = styled.div`
+  font-size: 24px;
+  font-family: "poppinsbold";
+  text-align: center;
+  margin-bottom: 20px;
+`;
+const LoginForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+const EmailDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const EmailLabel = styled.label`
+  font-size: 16px;
+  font-family: "poppinsregular";
+  text-align: left;
+  padding-left: 10px;
+`;
+const EmailInput = styled.input`
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+`;
+const PasswDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const PassLabel = styled.label`
+  font-size: 16px;
+  font-family: "poppinsregular";
+  text-align: left;
+  padding-left: 10px;
+`;
+const PassInput = styled.input`
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+`;
+const SubmitButton = styled.button`
+  background: #3c4242;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+`;
+const CloseButton = styled.button`
+  background: transparent;
+  border: none;
+  color: #807d7e;
+  font-size: 16px;
+  cursor: pointer;
+`;
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+const ModalContent = styled.div`
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 `;

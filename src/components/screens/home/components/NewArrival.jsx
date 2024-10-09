@@ -30,6 +30,13 @@ const NewArrival = () => {
       {
         breakpoint: 640,
         settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
@@ -75,7 +82,7 @@ const MainContainer = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 70px;
 `;
 
 const Bullet = styled.div`
@@ -115,7 +122,7 @@ const ContentContainer = styled(Link)`
 `;
 
 const ImgContainer = styled.div`
-  width: 96%;
+  width: 90%;
   cursor: pointer;
 `;
 
@@ -131,6 +138,7 @@ const Description = styled.p`
   font-size: 16px;
   font-weight: 700;
   color: #3c4242;
+  margin-top: 32px;
   @media all and (max-width: 980px) {
     font-size: 13px;
   }
