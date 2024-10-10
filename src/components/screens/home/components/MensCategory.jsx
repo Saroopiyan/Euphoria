@@ -7,19 +7,20 @@ import { useEffect, useState } from "react";
 const MensCategory = () => {
   const [menProducts, setMenProducts] = useState([]);
 
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("https://fakestoreapi.com/products");
+      const data = await response.json();
+      const filteredMenProducts = data.filter(
+        (item) => item.category === "men's clothing"
+      );
+      setMenProducts(filteredMenProducts);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch("https://fakestoreapi.com/products");
-        const data = await response.json();
-        const filteredMenProducts = data.filter(
-          (item) => item.category === "men's clothing"
-        );
-        setMenProducts(filteredMenProducts);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
     fetchProducts();
   }, []);
 
@@ -45,7 +46,7 @@ const MensCategory = () => {
                 </ImageContainer>
                 <Contents>
                   <Right>
-                    <Category>{truncateTitle(item.title, 15)}</Category>
+                    <Category>{truncateTitle(item.title, 20)}</Category>
                     <Text>Explore Now!</Text>
                   </Right>
                   <ArrowContainer>
@@ -125,7 +126,7 @@ const Products = styled(Link)`
     width: 30%;
   }
   @media all and (max-width: 888px) {
-    width: 29%;
+    width: 35%;
   }
   @media all and (max-width: 683px) {
     width: 43%;

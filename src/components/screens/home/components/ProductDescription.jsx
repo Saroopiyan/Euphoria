@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 const ProductDescription = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+
+  const fetchProduct = async () => {
+    try {
+      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const data = await response.json();
+      setProduct(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProduct();
+  }, [id]);
+
   return (
     <>
       <Wrapper>
@@ -31,12 +49,7 @@ const ProductDescription = () => {
               </DescriptionHeadingContainer>
             </DescriptionContainer>
             <DescriptionContainerExtend>
-              <Description>
-                100% Bio-washed Cotton - makes the fabric extra soft & silky.
-                Flexible ribbed crew neck. Precisely stitched with no pilling &
-                no fading. Provide all-time comfort. Anytime, anywhere. Infinite
-                range of matte-finish HD prints.
-              </Description>
+              <Description>{product?.description}</Description>
             </DescriptionContainerExtend>
           </LeftContainer>
           <RightContainer>
@@ -44,8 +57,8 @@ const ProductDescription = () => {
               <FirstColumn>
                 <Divs>
                   <DivsSub>
-                    <SubContent>Fabric</SubContent>
-                    <MainContent>Bio-washed Cotton</MainContent>
+                    <SubContent>Category</SubContent>
+                    <MainContent>{product?.category}</MainContent>
                   </DivsSub>
                 </Divs>
                 <Divs>

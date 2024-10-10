@@ -11,15 +11,30 @@ const SinglePage = () => {
   const [selectedImage, setSelectedImage] = useState([]);
   const [zoomStyle, setZoomStyle] = useState({ display: "none" });
   const [zoomBackground, setZoomBackground] = useState("");
+  const [product, setProduct] = useState(null);
 
-  const product = Object.values(Products.products)
+  const fetchProduct = async () => {
+    try {
+      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const data = await response.json();
+      setProduct(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  const details = Object.values(Products.products)
     .flat()
     .find((item) => item.id.toString() === id);
 
   useEffect(() => {
+    fetchProduct();
+  }, [id]);
+
+  useEffect(() => {
     if (product) {
-      setSelectedImage(product.image);
-      setZoomBackground(`url(${product.image})`);
+      setSelectedImage(product?.image);
+      setZoomBackground(`url(${product?.image})`);
     }
     window.scrollTo(0, 0);
   }, [product]);
@@ -37,8 +52,8 @@ const SinglePage = () => {
 
     setZoomStyle({
       display: "block",
-      top: y - 75 + "px", 
-      left: x - 75 + "px", 
+      top: y - 75 + "px",
+      left: x - 75 + "px",
       backgroundPosition: `${xPercent}% ${yPercent}%`,
     });
   };
@@ -72,7 +87,7 @@ const SinglePage = () => {
             <LeftDiv>
               <ImgDiv>
                 <StyledSlider {...settings}>
-                  {product.detail_images.map((item, index) => (
+                  {details?.detail_images?.map((item, index) => (
                     <SubImgContainer
                       key={index}
                       onClick={() => handleClick(item)}
@@ -84,7 +99,7 @@ const SinglePage = () => {
               </ImgDiv>
             </LeftDiv>
             <RightDiv>
-            <ImageContainer
+              <ImageContainer
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
               >
@@ -115,20 +130,20 @@ const SinglePage = () => {
               </RightArrowContainer>
               <CategoryContent>Top</CategoryContent>
             </Categories>
-            <Heading>{product.category}</Heading>
+            <Heading>{product?.title}</Heading>
             <RatingDiv>
               <RatingImgContainer>
                 <RatingImg
                   src={require("../../../../assets/images/review5.svg").default}
                 />
               </RatingImgContainer>
-              <RatingSpan>3.5</RatingSpan>
+              <RatingSpan>{product?.rating.rate}</RatingSpan>
               <CommentImgContainer>
                 <CommentImg
                   src={require("../../../../assets/images/message.svg").default}
                 />
               </CommentImgContainer>
-              <CommentSpan>120 comment</CommentSpan>
+              <CommentSpan>{product?.rating.count}</CommentSpan>
             </RatingDiv>
             <SizeContainer>
               <SizeSubDiv>
@@ -192,7 +207,7 @@ const SinglePage = () => {
                 </CartContainer>
               </AddCartDiv>
               <PriceDiv>
-                <Price>$63.00</Price>
+                <Price>${product?.price}</Price>
               </PriceDiv>
             </BuyContainer>
             <Divider></Divider>
@@ -339,8 +354,6 @@ const LeftContainer = styled.div`
     width: 100%;
     margin-bottom: 25px;
   }
-  
-
 `;
 const LeftDiv = styled.div`
   width: 30%;
