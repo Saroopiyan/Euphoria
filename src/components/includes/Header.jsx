@@ -254,6 +254,7 @@ const RightDiv = styled.div`
 const Form = styled.div`
   display: flex;
   background: #f6f6f6;
+  border-radius: 8px;
 `;
 const SearchContainer = styled.div`
   display: flex;
@@ -274,11 +275,15 @@ const SearchContainer = styled.div`
   }
 `;
 const SearchImgContainer = styled.div`
+  width: 20px;
+  height: 20px;
   @media all and (max-width: 1080px) {
     width: 12px;
+    height: 12px;
   }
   @media all and (max-width: 540px) {
     width: 17px;
+    height: 17px;
   }
 `;
 const SearchImage = styled.img`
@@ -306,9 +311,9 @@ const StyledInput = styled.input`
 const RightContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3.5rem;
   @media all and (max-width: 1280px) {
-    gap: 1rem;
+    gap: 1.5rem;
   }
   @media all and (max-width: 640px) {
     display: none;

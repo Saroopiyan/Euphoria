@@ -152,6 +152,7 @@ const Brands = styled.p`
   font-family: "poppinsmedium";
   font-size: 14px;
   color: #3c4242;
+  margin-top: 32px;
   @media all and (max-width: 768px) {
     font-size: 12px;
   }
